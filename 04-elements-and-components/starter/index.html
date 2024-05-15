@@ -11,20 +11,41 @@
 <body>
   <div id="root"></div>
   <script>
-
-    // Practice #1
+    // Practice #1 (Insoo Kim, Fri. May 03, 2024)
     // Create a variable called pEl
     // Use createElement to create a paragraph element with text "Hello React."
-
-    // Practice #2
+    const pEl = React.createElement('p', {}, 'Hello React.');
+    const Hello = () => React.createElement (
+        'p', {}, 'Hello React'
+        )
+    
+    // Practice #2 (Insoo Kim, Fri. May 03, 2024)
     // Create a variable called h1LinkEl
     // Use createElement to create an h1 element tag with a link inside of it
     // Make the link point to https://reactjs.org/ and include the text "React"
+    const h1LinkEl = React.createElement (
+      'h1', 
+      {className:'entry-header'}, 
+        React.createElement (
+          'a',
+          {href: 'https://reactjs.org'},
+          'React Homepage'
+        )
+      )
 
     // Practice #3
     // Create a component named "Header"
     // Have it return a header with an ID of "main" 
     // Include h1El and pEl inside of the header element
+    function Header() {
+      return ( 
+        React.createElement (
+          'header',
+          {id: 'main'},
+          pE1
+        )
+      )
+    } 
 
 
     // Practice #4
@@ -40,11 +61,9 @@
     // Create a component named "App"
     // Have it return a Fragment with the Header and List components inside of it
 
-
-
     ReactDOM.render(
       // Place your element variable or component function call here to test
-      '',
+      Hello(),
       document.getElementById('root')
     );
 
